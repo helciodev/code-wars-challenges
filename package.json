@@ -1,0 +1,28 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "repo about some code wars challenges I plan to solve",
+  "main": "training-on-the-hashtag-generator.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helciodev/code-wars-challenges.git"
+  },
+  "keywords": [
+    "hashtag-generator",
+    "coding",
+    "code-wars",
+    "JavaScript"
+  ],
+  "author": "helciodev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/helciodev/code-wars-challenges/issues"
+  },
+  "homepage": "https://github.com/helciodev/code-wars-challenges#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
