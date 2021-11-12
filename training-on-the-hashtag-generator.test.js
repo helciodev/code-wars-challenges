@@ -27,3 +27,7 @@ test("return #CodewarsIsNice", () => {
 test("returns false is str equals(#)", () => {
   expect(hashTagGenerator("#")).toBe(false);
 });
+
+test("returns #WorldClimateChange", () => {
+  expect(hashTagGenerator("world climate change")).toBe("#WorldClimateChange");
+});
