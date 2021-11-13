@@ -16,7 +16,7 @@ function hashTagGenerator(str) {
 
   hashtag = "#" + hashtag;
 
-  return hashtag.length > 140 ? false : hashtag;
+  return hashtag.length > 140 || hashtag === "#" ? false : hashtag;
 }
 
 // module.exports = hashTagGenerator;
