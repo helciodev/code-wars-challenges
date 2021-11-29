@@ -24,23 +24,33 @@ function formatDuration(seconds) {
         second ? (second > 1 ? second + ' seconds' : second + ' second') : ''
       }`;
     }
-
-    message = message.replaceAll('  ', ' ');
   } else {
     if (seconds >= 60 && seconds % 60 === 0) {
       minutes = seconds / 60;
-      message = `${minutes} ${minutes > 1 ? 'minutes' : 'minute'}`;
+      message = `${
+        minutes
+          ? minutes > 1
+            ? minutes + ' minutes'
+            : minutes + ' minute'
+          : ''
+      }`;
     } else {
       minutes = Math.floor(seconds / 60);
       second = seconds % 60;
-      message = `${minutes} ${
-        minutes > 1 ? 'minutes' : 'minute'
-      } and ${second} ${second > 1 ? 'seconds' : 'second'}`;
+      message = `${
+        minutes
+          ? minutes > 1
+            ? minutes + ' minutes and'
+            : minutes + ' minute and'
+          : ''
+      } ${second} ${second > 1 ? 'seconds' : 'second'}`;
     }
   }
-  return message;
+
+  message = message.replace('  ', ' ');
+  return message.trim();
 }
 
 module.exports = formatDuration;
 
-formatDuration(1050);
+formatDuration(1);

@@ -18,3 +18,6 @@ test('formatDuration(62) to return, 1 minute and 2 seconds', () => {
 test('formatDuration(120) to return, 2 minutes', () => {
   expect(formatDuration(120)).toBe('2 minutes');
 });
+test('formatDuration(1) to return, 1 second', () => {
+  expect(formatDuration(1)).toBe('1 second');
+});
