@@ -14,7 +14,7 @@ function formatDuration(seconds) {
     if (!minutes && !second) {
       message = `${hour} ${hour > 1 ? 'hours' : 'hour'}`;
     } else {
-      message = `${hour} ${hour > 1 ? 'hours' : 'hour'} ${
+      message = `${hour} ${hour > 1 ? 'hours' : 'hour'}, ${
         minutes
           ? minutes > 1
             ? minutes + ' minutes'
@@ -22,12 +22,25 @@ function formatDuration(seconds) {
           : ''
       } and ${
         second ? (second > 1 ? second + ' seconds' : second + ' second') : ''
-      } `;
+      }`;
     }
 
     message = message.replaceAll('  ', ' ');
-    console.log(message);
+  } else {
+    if (seconds >= 60 && seconds % 60 === 0) {
+      minutes = seconds / 60;
+      message = `${minutes} ${minutes > 1 ? 'minutes' : 'minute'}`;
+    } else {
+      minutes = Math.floor(seconds / 60);
+      second = seconds % 60;
+      message = `${minutes} ${
+        minutes > 1 ? 'minutes' : 'minute'
+      } and ${second} ${second > 1 ? 'seconds' : 'second'}`;
+    }
   }
+  return message;
 }
 
-formatDuration(3602);
+module.exports = formatDuration;
+
+formatDuration(1050);
